@@ -1,0 +1,6 @@
+requests
+pandas
+apache-airflow-providers-common-sql
+apache-airflow-providers-microsoft-mssql
+pymssql
+pyodbc

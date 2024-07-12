@@ -1,0 +1,6 @@
+mssql_local:
+  conn_type: mssql
+  conn_id: mssql_local
+  login: airflow
+  password: 1234567890
+  schema: Olsera

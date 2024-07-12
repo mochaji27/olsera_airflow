@@ -1,0 +1,8 @@
+FROM apache/airflow:2.9.1
+COPY requirements.txt /
+WORKDIR /
+USER root
+RUN apt-get update && apt-get install -y build-essential && apt-get install -y freetds-dev && apt-get install -y libkrb5-dev && apt-get install -y default-libmysqlclient-dev
+USER airflow
+RUN pip install --no-cache-dir -r requirements.txt
+RUN export AIRFLOW_CONN_MSSQL_DEFAULT='mssql://airflow:1234567890@192.168.1.16:1433/Olsera'
