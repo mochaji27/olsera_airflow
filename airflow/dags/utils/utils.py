@@ -28,6 +28,10 @@ def replace_value_json(value):
     value_str = value_str.replace('0000-00-00 00:00:00', '1999-01-01 12:00:00')
     if value_str in {"None", "''"}:
         return None
+    if value_str == False:
+        return 0
+    elif value_str == True:
+        return 1
     return value_str
 
 def transformation_data(table_name, datas, details = 'no', outlet_name='', conn_engine = ''):
